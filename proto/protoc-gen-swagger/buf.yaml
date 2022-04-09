@@ -1,0 +1,4 @@
+version: v1
+name: buf.build/evalsocket/protoc-gen-swagger
+deps:
+  - buf.build/googleapis/googleapis

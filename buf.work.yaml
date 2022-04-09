@@ -1,0 +1,4 @@
+version: v1
+directories:  
+  - proto/k8s.io
+  - proto/protoc-gen-swagger

@@ -1,0 +1,25 @@
+name: CI
+on:
+  workflow_dispatch:
+  push:
+    branches:
+      - master
+  schedule:
+    - cron:  '30 5 * * *'
+env:
+  BUF_TOKEN: ${{ secrets.BUF_TOKEN }} 
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: checkout
+        uses: actions/checkout@v1
+      - name: Setup Dagger
+        uses: dagger/dagger-for-github@v2
+        with:
+          install-only: true
+      - name: Publish BSR Registry
+        run: |
+          dagger project update
+          dagger do -l debug --log-format plain push 

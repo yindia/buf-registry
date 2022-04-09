@@ -1,0 +1,4 @@
+version: v1
+name: buf.build/evalsocket/k8s
+deps:
+  - buf.build/googleapis/googleapis
