@@ -3,7 +3,7 @@ on:
   workflow_dispatch:
   push:
     branches:
-      - master
+      - main
   schedule:
     - cron:  '30 5 * * *'
 env:
